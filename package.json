@@ -2,7 +2,7 @@
   "name": "iss-live-location",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wils0nc00k.github.io/ISS-Live-Location/."
+  "homepage": "https://wils0nc00k.github.io/ISS-Live-Location/.",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
