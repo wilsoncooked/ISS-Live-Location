@@ -35,15 +35,15 @@ componentDidMount() {
         keyboard: true,
         scrollWheelZoom: true
     }).addTo(this.map);
-     const myIcon = L.icon({
-         iconUrl: 'https://banner2.kisspng.com/20180530/kfz/kisspng-international-space-station-zero-robotics-earth-ob-iss-5b0f61c0d63e76.3070287115277347208776.jpg',
-        iconSize: [50],
-         iconAnchor: [22, 94],
-        popupAnchor: [-3, -76],
-        shadowSize: [68, 95],
-         shadowAnchor: [22, 94]
-     });
-    L.marker([52.5200, 13.4050], {icon: myIcon}).addTo(this.map);
+//      const myIcon = L.icon({
+//          iconUrl: 'https://banner2.kisspng.com/20180530/kfz/kisspng-international-space-station-zero-robotics-earth-ob-iss-5b0f61c0d63e76.3070287115277347208776.jpg',
+//         iconSize: [50],
+//          iconAnchor: [22, 94],
+//         popupAnchor: [-3, -76],
+//         shadowSize: [68, 95],
+//          shadowAnchor: [22, 94]
+//      });
+//     L.marker([52.5200, 13.4050], {icon: myIcon}).addTo(this.map);
 }
 render(){
     return(
