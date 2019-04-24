@@ -2,3 +2,21 @@
   text-align: center;
 }
 
+.specs-panel {
+  background-color: pink;
+}
+
+.bottom-panel {
+  height: 50vh;
+  width: 100vw;
+  background-color: white;
+}
+
+.expansion-panel {
+  position: fixed;
+  bottom: 0px;
+}
+
+.visible-expansion-bar {
+  border: 2px solid red;
+}
