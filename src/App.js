@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import './App.css'
+import NightMap from './Components/NightMap.js'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <h2>hiiiii team! this is neli!</h2>
+      <NightMap />
       </div>
     );
   }
