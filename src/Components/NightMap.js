@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     height: ${props => props.height};
 `;
 
-class NightMap extends React.Component {
+class NightMap extends React {
     state = {
         location: {
             lat: 52.5200,
