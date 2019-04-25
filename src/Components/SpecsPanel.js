@@ -6,31 +6,38 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { light } from '@material-ui/core/styles/createPalette';
 
 const styles = theme => ({
   root: {
     width: '100vw',
-    height: '50vh'
+    height: '50vh',
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  expansion: {
+    backgroundColor: '#1e204d',
+    margin: '0px',
+    color: "primary"
+  },
+  content: {
+    backgroundColor: '#1e204d',
+    width: '93vw'
+  }
 });
 
 function SpecsExpansion (props) {
   const { classes } = props;
   return (
-    <div className="expansion-panel">
+    <div className='expansion-panel'>
       <ExpansionPanel >
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+        <ExpansionPanelSummary className={classes.expansion} expandIcon={<ExpandMoreIcon />}>
+            <Typography>La lA</Typography>
           </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
+        <ExpansionPanelDetails className={`${classes.content} colorPrimary`}>
+          <Typography>la la</Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
