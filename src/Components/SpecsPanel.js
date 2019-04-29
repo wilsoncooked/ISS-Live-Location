@@ -18,9 +18,8 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightRegular,
   },
   expansion: {
-    backgroundColor: '#1e204d',
+    backgroundColor: '#0c0620;',
     margin: '0px',
-    color: "primary"
   },
   content: {
     backgroundColor: '#1e204d',
@@ -34,10 +33,10 @@ function SpecsExpansion (props) {
     <div className='expansion-panel'>
       <ExpansionPanel >
         <ExpansionPanelSummary className={classes.expansion} expandIcon={<ExpandMoreIcon />}>
-            <Typography>La lA</Typography>
+            <Typography  color="primary">La lA</Typography>
           </ExpansionPanelSummary>
         <ExpansionPanelDetails className={`${classes.content} colorPrimary`}>
-          <Typography>la la</Typography>
+          <Typography color="primary">la la</Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
