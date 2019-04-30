@@ -1,10 +1,21 @@
 .App {
-  text-align: center;
-  background-color: transparent;
+text-align: center;
+margin-top: 250px;
+
 }
 
+.buttonlp {
+ display: flex;
+ align-items: center;
+ width: 200px;
+}
+#map {
+  z-index: -1;
+}
+
+
 .BlackFriday {
-  color: black;
+  color: rgb(255, 218, 7);
 }
 .spaceSation {
   background-color: blue;

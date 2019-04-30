@@ -9,8 +9,12 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 class App extends Component {
   render() {
     return (
+<<<<<<< HEAD
       <BrowserRouter>
       <MuiThemeProvider theme={Themes}>
+=======
+      <MuiThemeProvider theme={Themes}> 
+>>>>>>> 9029b1182814f590d632bab1903a2b18d2fba0b2
         <div className="App">
           <Navigation />
           <Switch>
