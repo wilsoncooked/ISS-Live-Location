@@ -1,5 +1,4 @@
 .App {
-<<<<<<< HEAD
 text-align: center;
 margin-top: 250px;
 
@@ -13,17 +12,7 @@ margin-top: 250px;
 #map {
   z-index: -1;
 }
-.landing {
-  background-image: url('./Photos/photo3.jpg');
-  width: 100vw;
-  height: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover; 
-  position: fixed;
-=======
-  text-align: center;
-  background-color: transparent;
-}
+
 
 .BlackFriday {
   color: black;
@@ -31,5 +20,4 @@ margin-top: 250px;
 .spaceSation {
   background-color: blue;
   color: red;
->>>>>>> 8e89a6219945741741a0060203a591d1c5b5d6e1
 }
