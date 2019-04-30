@@ -1,0 +1,38 @@
+.container {
+  background-image: url("../Photos/photo1.jpg");
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+}
+
+.actionbutton {
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 10%;
+  border: 2px solid lightsteelblue;
+  border-radius: 100%;
+  font-size: 25px;
+  background-color: transparent;
+  color: white;
+  font-family: 'Space Mono', monospace;
+}
+
+.actionbutton:focus {
+  outline: 0;
+  
+}
+.actionbutton:active {
+  border-color: rgba(176, 196, 222, 0.5);
+}
+.actionbutton:hover {
+  background-color: rgba(242, 242, 242, 0.1)
+}
