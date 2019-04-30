@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     height: ${props => props.height};
 `;
 
-class NightMap extends React.Component {
+class Map extends React.Component {
     state = {
         location: {
             lat: 52.5200,
@@ -43,4 +43,4 @@ render(){
 }
 }
 
-export default NightMap;
+export default Map;

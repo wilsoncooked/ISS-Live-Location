@@ -15,20 +15,11 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 class App extends Component {
   render() {
     return (
-        <BrowserRouter>
+
             <div className="App">
-              <NavigationBar />
-              <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route path="/map" component={MainMap}/>
-                <Route path="/prediction" component={Prediction}/>
-                <Route path="/about" component={About}/>
-                <Route path="/contact" component={Contact}/>
-              </Switch>
-              <IssApi />  
               <NightMap />
             </div>
-        </BrowserRouter>
+
     );
   }
 }
