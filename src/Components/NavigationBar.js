@@ -36,7 +36,8 @@ class NavigationBar extends React.Component {
               centered
             >
               <Tab
-                label={<NavLink className="navLink" exact to="/">HOME</NavLink>}
+                onChange={<NavLink className="navLink" exact to="/"></NavLink>}
+                label={'HOME'}
                 classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
                 style={{color: '#ffda07',}}
                 />
