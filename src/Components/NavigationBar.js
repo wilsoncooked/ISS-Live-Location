@@ -8,8 +8,8 @@ import Tab from '@material-ui/core/Tab';
 const styles = {
   root: {
     flexGrow: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0)'
-  },
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  }
 };
 
 class NavigationBar extends React.Component {
@@ -25,34 +25,26 @@ class NavigationBar extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Paper  
-      BackdropProps={{
-        classes: {
-         root: classes.root
-        }
-       }
-      }>
-        <Tabs
-                BackdropProps={{
-                  classes: {
-                   root: classes.root
-                  }
-                 }
-                }
-          value={this.state.value}
-          onChange={this.handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          centered
-        >
-          <Tab label="Item One"
-          style={{color: '#ffda07'}}/>
-          <Tab label="Item Two" 
-          style={{color: '#ffda07'}}/>
-          <Tab label="Item Three" 
-          style={{color: '#ffda07'}}/>
-        </Tabs>
-      </Paper>
+      <paper>
+            <Tabs 
+              classes={{ root: classes.root}}
+              value={this.state.value}
+              onChange={this.handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              centered
+            >
+              <Tab label="Item One"
+              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+              style={{color: '#ffda07'}}/>
+              <Tab label="Item Two" 
+              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+              style={{color: '#ffda07'}}/>
+              <Tab label="Item Three" 
+              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+              style={{color: '#ffda07'}}/>
+            </Tabs>
+        </paper>
     );
   }
 }
