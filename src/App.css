@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  background-color: transparent;
 }
 
 .BlackFriday {
   color: black;
+}
+.spaceSation {
+  background-color: blue;
+  color: red;
 }
