@@ -65,6 +65,7 @@ const LandingPage = theme => ({
   },
   imageTitle: {
     position: 'relative',
+    border: roude
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
   },
   imageMarked: {
