@@ -31,7 +31,7 @@ class IssApi extends React.Component {
         console.log(this.state.iss_position)
         return (
             <div className="spaceSation">
-                <h1>Latitude: {this.state.iss_position.latitude} Longitude: {this.state.iss_position.longitude}</h1>
+                
             </div>
         )
     }
