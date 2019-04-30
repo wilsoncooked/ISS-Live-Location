@@ -90,34 +90,7 @@ function ButtonBases(props) {
 
   return (
     <div className={classes.root}>
-      {images.map(image => (
-        <ButtonBase className= "buttonlp"
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: 800,
-            
-          }}
-        >
-          <span
-            className={classes.imageSrc}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-              {image.title}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
+      
     </div>
   );
 }

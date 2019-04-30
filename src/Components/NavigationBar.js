@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import {NavLink} from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -34,15 +35,31 @@ class NavigationBar extends React.Component {
               textColor="primary"
               centered
             >
-              <Tab label="Item One"
-              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-              style={{color: '#ffda07'}}/>
-              <Tab label="Item Two" 
-              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-              style={{color: '#ffda07'}}/>
-              <Tab label="Item Three" 
-              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-              style={{color: '#ffda07'}}/>
+              <Tab
+                label={<NavLink className="navLink" exact to="/">HOME</NavLink>}
+                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+                style={{color: '#ffda07',}}
+                />
+              <Tab 
+                label={<NavLink className="navLink" to="/map/">MAP</NavLink>} 
+                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+                style={{color: '#ffda07'}}
+                />
+              <Tab 
+                label={<NavLink className="navLink" to="/prediction/">PREDICTION</NavLink>} 
+                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+                style={{color: '#ffda07'}}
+                />
+              <Tab 
+                label={<NavLink className="navLink" to="/about/">ABOUT</NavLink>} 
+                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+                style={{color: '#ffda07'}}
+                />
+              <Tab 
+                label={<NavLink className="navLink" to="/contact/">CONTACT</NavLink>} 
+                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+                style={{color: '#ffda07'}}
+                />
             </Tabs>
         </paper>
     );

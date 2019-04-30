@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Prediction extends React.Component {
+class Home extends React.Component {
     render () {
         return (
             <div>
@@ -9,4 +9,4 @@ class Prediction extends React.Component {
     }
 }
 
-export default Prediction;
+export default Home;
