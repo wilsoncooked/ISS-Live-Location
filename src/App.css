@@ -1,14 +1,12 @@
 .App {
   text-align: center;
+  background-color: transparent;
 }
 
-#map {
-  z-index: 0;
+.BlackFriday {
+  color: black;
 }
-
-.expansion-panel {
-  position: fixed;
-  bottom: 0px;
-  z-index: 1;
-  color: #0c0620;
+.spaceSation {
+  background-color: blue;
+  color: red;
 }
