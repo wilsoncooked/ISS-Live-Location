@@ -31,12 +31,15 @@ function SpecsExpansion (props) {
   const { classes } = props;
   return (
     <div className='expansion-panel'>
-      <ExpansionPanel >
-        <ExpansionPanelSummary className={classes.expansion} expandIcon={<ExpandMoreIcon />}>
-            <Typography  color="primary">La lA</Typography>
-          </ExpansionPanelSummary>
-        <ExpansionPanelDetails className={`${classes.content} colorPrimary`}>
-          <Typography color="primary">la la</Typography>
+      <ExpansionPanel>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+            sit amet blandit leo lobortis eget.
+          </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
