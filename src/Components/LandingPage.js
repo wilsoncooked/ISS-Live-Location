@@ -1,5 +1,4 @@
 import React from 'react'
-import photo1 from '../Photos/photo5jpg.jpg'
 import './LandingPage.css'
 
 
