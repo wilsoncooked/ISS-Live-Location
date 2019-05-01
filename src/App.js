@@ -7,7 +7,6 @@ import IssApi from './Components/IssApi.js';
 import Home from './Components/Home'
 import MainMap from './Components/MainMap.js';
 import NavigationBar from './Components/NavigationBar.js';
-import NightMap from './Components/NightMap.js';
 import Prediction from './Components/Prediction.js';
 
 class App extends Component {
@@ -24,7 +23,6 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
           </Switch>
           <IssApi />
-          <NightMap />
         </div>
       </BrowserRouter>
     );
