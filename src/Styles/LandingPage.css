@@ -1,0 +1,72 @@
+.container {
+  background-image: url("../Photos/photo1.jpg");
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Space Mono', monospace;
+}
+
+.actionbutton {
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  bottom: 10%;
+  border: 2px solid lightsteelblue;
+  border-radius: 100%;
+  font-size: 25px;
+  background-color: transparent;
+  color: white;
+  font-family: 'Space Mono', monospace;
+}
+
+.actionbutton:focus {
+  outline: 0;
+}
+.actionbutton:active {
+  border-color: rgba(176, 196, 222, 0.5);
+}
+.actionbutton:hover {
+  background-color: rgba(242, 242, 242, 0.1)
+}
+
+.planet {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-image: url("../Photos/map2.png");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -290px;
+  margin-left: -170px;
+}
+.gravity {
+  width: 10px;
+  height: 10px;
+  animation: sideToSide 3s infinite ease-in-out alternate;
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  margin-left: -135px;
+}
+.satellite {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url("../Photos/satellite.svg");
+  animation: circle 6s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  transform-origin: 200px center;
+}
+@keyframes circle { to { transform: rotate(1turn); } }
+@keyframes sideToSide { to { transform: translateX(600px); } }

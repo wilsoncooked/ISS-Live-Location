@@ -1,6 +1,7 @@
 .App {
-text-align: center;
+  text-align: center;
 }
+
 .navLink {
   text-decoration: none;
   color: rgb(255, 217, 0);
@@ -14,7 +15,6 @@ text-align: center;
 #map {
   z-index: -1;
 }
-
 
 .BlackFriday {
   color: rgb(255, 218, 7);
