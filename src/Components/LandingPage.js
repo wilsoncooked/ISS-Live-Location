@@ -1,13 +1,13 @@
 import React from 'react'
-import './LandingPage.css'
+import '../Styles/LandingPage.css'
 
 const LandingPage = () => {
   return (
     <div className="container">
-        <div class="planet"></div>
-    <div class="gravity">
-      <div class="satellite"></div>
-    </div>
+      <div className="planet"></div>
+      <div className="gravity">
+        <div className="satellite"></div>
+      </div>
       <button className="actionbutton">EXPLORE</button>
     </div>
   );

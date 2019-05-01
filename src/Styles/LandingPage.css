@@ -28,7 +28,6 @@
 
 .actionbutton:focus {
   outline: 0;
-  
 }
 .actionbutton:active {
   border-color: rgba(176, 196, 222, 0.5);
@@ -37,24 +36,6 @@
   background-color: rgba(242, 242, 242, 0.1)
 }
 
-
-/*
-http://demosthenes.info/blog/860/Animating-Elements-In-Arcs-Circles-and-Ellipses-With-CSS
-https://codepen.io/thebabydino/pen/sgtri/
-http://jsfiddle.net/jutmLgud/
-http://dabblet.com/gist/3709050
-*/
-/* body {
-  background: #000;
-} */
-/* .container {
-  background: #000;
-  margin: auto;
-  height: 480px;
-  width: 100%;
-  position: relative;
-  max-width: 100%;
-} */
 .planet {
   width: 350px;
   height: 350px;
