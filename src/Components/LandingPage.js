@@ -1,5 +1,11 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import '../Styles/LandingPage.css'
+import App from '../App';
+
+const handleButtonClick = () => {
+  ReactDOM.render(<App />, document.getElementById('root'));
+}
 
 const LandingPage = () => {
   return (
@@ -8,7 +14,12 @@ const LandingPage = () => {
       <div className="gravity">
         <div className="satellite"></div>
       </div>
-      <button className="actionbutton">EXPLORE</button>
+      <button
+        className="actionbutton"
+        onClick={handleButtonClick}
+      >
+        EXPLORE
+      </button>
     </div>
   );
 }
