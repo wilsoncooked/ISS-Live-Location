@@ -14,24 +14,14 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-<<<<<<< HEAD
           <Switch>
             <Route exact path="/" component={Home} />
-=======
-          <NavigationBar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/map" component={MainMap} />
->>>>>>> 775733857155a364844db4f66fa4da0d7f12eeb5
             <Route path="/prediction" component={Prediction} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
           </Switch>
           <IssApi />
-<<<<<<< HEAD
           <NavigationBar />
-=======
->>>>>>> 775733857155a364844db4f66fa4da0d7f12eeb5
           <NightMap />
         </div>
       </BrowserRouter>
