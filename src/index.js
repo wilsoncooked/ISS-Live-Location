@@ -4,12 +4,10 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import LandingPage from './Components/LandingPage';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App'
 
 ReactDOM.render(
     <BrowserRouter>
         <LandingPage />
-        <App />
     </BrowserRouter>,
  document.getElementById('root'));
 
