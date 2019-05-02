@@ -7,3 +7,20 @@
   color: rgb(255, 217, 0);
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+}
+
+.hihi {
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .hihi {
+    color: red;
+  }
+}

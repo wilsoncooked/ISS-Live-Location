@@ -5,11 +5,11 @@ import {NavLink} from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import SmallNavBar from './SmallNavBar'
 
 const styles = {
   root: {
     flexGrow: 1,
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   }
 };
 
@@ -26,9 +26,9 @@ class NavigationBar extends React.Component {
     const { classes } = this.props;
 
     return (
-      <paper>
+        <div className="navbar">
+          <div>
             <Tabs 
-              classes={{ root: classes.root}}
               value={this.state.value}
               onChange={this.handleChange}
               indicatorColor="primary"
@@ -56,7 +56,11 @@ class NavigationBar extends React.Component {
                 style={{color: '#ffda07'}}
                 />
             </Tabs>
-        </paper>
+          </div>
+          <div>
+            <SmallNavBar /> 
+          </div>
+        </div>
     );
   }
 }
