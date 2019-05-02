@@ -13,13 +13,13 @@ class Map extends React.Component {
         location: {
             lat: 52.5200,
             lng: 13.4050,
-            zoom: 20
+            zoom: 3
         }
     }
 componentDidMount() {
     this.map = L.map(`map`, {
         center: [52, 13],
-        zoom: 4,
+        zoom: 1.3,
         zoomControl: false,
     });
 
