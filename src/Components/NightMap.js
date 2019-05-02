@@ -19,8 +19,8 @@ class NightMap extends React.Component {
 
   componentDidMount() { 
     this.map = L.map(`map`, {
-      center: [58, 57],
-      zoom: 1.2,
+      center: [25, 133],
+      zoom: 2.5,
       zoomControl: false,
     });
 
