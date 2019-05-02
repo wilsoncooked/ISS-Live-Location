@@ -1,27 +1,63 @@
-import React from 'react'
-import ReactDOM from 'react-dom';
+import React from 'react';
 import '../Styles/LandingPage.css'
-import App from '../App';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
 
-const handleButtonClick = () => {
-  ReactDOM.render(<App />, document.getElementById('root'));
-}
+const styles = {
+  fullPage: {
+    width: '100vw',
+    height: '100vh',
+  },
+};
 
-const LandingPage = () => {
-  return (
-    <div className="container">
-      <div className="planet"></div>
-      <div className="gravity">
-        <div className="satellite"></div>
+class TemporaryDrawer extends React.Component {
+  state = {
+    bottom: true
+  };
+
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open,
+    });
+  };
+
+  render() {
+    const { classes } = this.props;
+
+
+    return (
+      <div>
+        <Drawer anchor="bottom" open={this.state.bottom} onClose={this.toggleDrawer('bottom', false)}>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('bottom', false)}
+            onKeyDown={this.toggleDrawer('bottom', false)}
+          >
+            <div className={classes.fullPage}>
+            <div className="container">
+                <div className="planet"></div>
+                <div className="gravity">
+                    <div className="satellite"></div>
+                </div>
+                <button
+                    className="actionbutton"
+                    onClick={this.toggleDrawer('bottom', true)}
+                >
+                    EXPLORE
+                </button>
+                </div>
+            </div>
+          </div>
+        </Drawer>
       </div>
-      <button
-        className="actionbutton"
-        onClick={handleButtonClick}
-      >
-        EXPLORE
-      </button>
-    </div>
-  );
+    );
+  }
 }
 
-export default LandingPage;
+TemporaryDrawer.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(TemporaryDrawer);
