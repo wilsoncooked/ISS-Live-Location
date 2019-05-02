@@ -24,23 +24,60 @@ componentDidMount() {
     });
 
     L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
-        attribution: false,
-        bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
-        minZoom: 1,
-        maxZoom: 8,
-        format: 'jpg',
-        time: '',
-        tilematrixset: 'GoogleMapsCompatible_Level',
-        animate: true,
-        keyboard: true,
-        scrollWheelZoom: true
+      attribution: false,
+      bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
+      minZoom: 1,
+      maxZoom: 8,
+      format: 'jpg',
+      time: '',
+      tilematrixset: 'GoogleMapsCompatible_Level',
+      animate: true,
+      keyboard: true,
+      scrollWheelZoom: true
     }).addTo(this.map);
-}
-render(){
-    return(
-        <Wrapper width='100vw' height='100vh' id='map' />
+  }
+
+  renderSatelite() {
+    const { sateliteLocation } = this.props;
+    console.log('the sateilte location', sateliteLocation);
+
+    if (typeof sateliteLocation.latitude !== "undefined") {
+      var geojsonFeature = {
+        "type": "Feature",
+        "properties": {
+          "name": "Satelite Location",
+          "popupContent": "This is where the Satelite is right now!"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [sateliteLocation.longitude, sateliteLocation.latitude]
+        }
+      };
+  
+      var geojsonMarkerOptions = {
+        radius: 8,
+        fillColor: "#ff7800",
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+      };
+  
+      L.geoJSON(geojsonFeature, {
+        pointToLayer: function (feature, latlng) {
+          return L.circleMarker(latlng, geojsonMarkerOptions);
+        }
+      }).addTo(this.map);
+
+    }
+  }
+
+  render() {
+    this.renderSatelite();
+    return (
+      <Wrapper width='100vw' height='100vh' id='map' />
     )
-}
+  }
 }
 
 export default Map;
