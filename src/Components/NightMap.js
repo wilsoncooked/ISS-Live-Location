@@ -14,8 +14,7 @@ class NightMap extends React.Component {
       lat: 43.5200,
       lng: 42.4050,
       zoom: 10
-    }
-  }
+
 
   componentDidMount() { 
     this.map = L.map(`map`, {
@@ -81,4 +80,4 @@ class NightMap extends React.Component {
   }
 }
 
-export default NightMap;
+export default Map;

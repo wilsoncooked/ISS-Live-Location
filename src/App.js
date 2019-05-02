@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import About from './Components/About.js';
-import Contact from './Components/Contact.js';
+import About from './AppPages/About.js';
+import Contact from './AppPages/Contact.js';
 import IssApi from './Components/IssApi.js';
-import Home from './Components/Home'
-import MainMap from './Components/MainMap.js';
+import Home from './AppPages/Home.js'
 import NavigationBar from './Components/NavigationBar.js';
 import Prediction from './Components/Prediction.js';
+
+
 
 class App extends Component {
   render() {
@@ -15,13 +16,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <NavigationBar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/map" component={MainMap} />
-            <Route path="/prediction" component={Prediction} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/prediction" component={Prediction} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
           <IssApi />
         </div>
       </BrowserRouter>
