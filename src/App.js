@@ -1,19 +1,30 @@
-import React, { Component } from 'react'
-import './App.css'
-import IssApi from './Components/IssApi.js'
-import NightMap from './Components/NightMap.js'
-import Themes from './Themes'
-import { MuiThemeProvider } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import About from './AppPages/About.js';
+import Contact from './AppPages/Contact.js';
+import IssApi from './Components/IssApi.js';
+import Home from './AppPages/Home.js'
+import NavigationBar from './Components/NavigationBar.js';
+//import Prediction from './Components/Prediction.js';
+
+
 
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider theme={Themes}> 
+      <BrowserRouter>
         <div className="App">
-          <IssApi />  
-          <NightMap />
+          <NavigationBar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/prediction" component={Prediction} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+          <IssApi />
         </div>
-      </MuiThemeProvider>
+      </BrowserRouter>
     );
   }
 }
