@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import LandingPage from './Components/LandingPage';
+import App from './App'
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
     <BrowserRouter>
-        <LandingPage />
+        <App />
     </BrowserRouter>,
  document.getElementById('root'));
 

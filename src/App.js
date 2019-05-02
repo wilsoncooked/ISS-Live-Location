@@ -7,19 +7,21 @@ import IssApi from './Components/IssApi.js';
 import Home from './AppPages/Home.js'
 import NavigationBar from './Components/NavigationBar.js';
 import Prediction from './AppPages/Prediction.js';
+import LandingPage from './Components/LandingPage.js'
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <NavigationBar />
+          <LandingPage />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/prediction" component={Prediction} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
             </Switch>
+            <NavigationBar />
           <IssApi />
         </div>
       </BrowserRouter>
