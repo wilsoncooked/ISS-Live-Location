@@ -12,6 +12,7 @@
   justify-content: space-around;
   align-items: center;
   background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  z-index: 10;
 }
 
 .hihi {
@@ -23,4 +24,8 @@
   .hihi {
     color: red;
   }
+}
+
+#map {
+  overflow: hidden;
 }
