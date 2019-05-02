@@ -6,7 +6,7 @@ import Contact from './AppPages/Contact.js';
 import IssApi from './Components/IssApi.js';
 import Home from './AppPages/Home.js'
 import NavigationBar from './Components/NavigationBar.js';
-import Prediction from './Components/Prediction.js';
+//import Prediction from './Components/Prediction.js';
 
 
 
