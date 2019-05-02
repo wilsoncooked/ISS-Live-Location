@@ -19,7 +19,7 @@ class NightMap extends React.Component {
 
   componentDidMount() { 
     this.map = L.map(`map`, {
-      center: [43, 42],
+      center: [58, 57],
       zoom: 1.2,
       zoomControl: false,
     });
@@ -51,7 +51,7 @@ class NightMap extends React.Component {
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [sateliteLocation.latitude, sateliteLocation.longitude]
+          "coordinates": [sateliteLocation.longitude, sateliteLocation.latitude]
         }
       };
   
