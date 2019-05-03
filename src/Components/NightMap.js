@@ -4,16 +4,16 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    width: 100vw;
-    height: 100vh;
+    width: 100px;
+    height: 100px;
 `;
 
 class NightMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      latitude: 10.5200,
-      longitude: 50.4050,
+      latitude: '',
+      longitude: '',
       zoom: 2
     }
   };
@@ -37,7 +37,7 @@ class NightMap extends React.Component {
       scrollWheelZoom: true
     }).addTo(this.map);
   }
-  
+  //NELI 
   renderSatelite() {
     const { sateliteLocation } = this.props;
     console.log('the sateilte location', sateliteLocation);
@@ -45,10 +45,10 @@ class NightMap extends React.Component {
     if (typeof sateliteLocation.latitude !== "undefined") {
       var geojsonFeature = {
         "type": "Feature",
-        "properties": {
-          "name": "Satelite Location",
-          "popupContent": "This is where the Satelite is right now!"
-        },
+        // "properties": {
+        //   "name": "Satelite Location",
+        //   "popupContent": "This is where the Satelite is right now!"
+        // },
         "geometry": {
           "type": "Point",
           "coordinates": [sateliteLocation.longitude, sateliteLocation.latitude]
@@ -71,13 +71,13 @@ class NightMap extends React.Component {
       }).addTo(this.map);
     }
   }
-
+//NELI END
   render() {
     this.renderSatelite();
     return (
       <div>
         <Wrapper id='map' />
-      Location: {props.sataliteLocation}
+      Position: {this.props.sateliteLocation.longitude}, {this.props.sateliteLocation.latitude}
       </div>
     )
   }
