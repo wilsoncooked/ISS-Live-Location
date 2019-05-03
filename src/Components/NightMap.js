@@ -26,7 +26,6 @@ class NightMap extends React.Component {
 
     L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
       attribution: false,
-      bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
       minZoom: 1,
       maxZoom: 8,
       format: 'jpg',
