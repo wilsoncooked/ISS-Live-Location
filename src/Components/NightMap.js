@@ -3,6 +3,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
+
 const Wrapper = styled.div`
     width: ${props => props.width};
     height: ${props => props.height};
@@ -16,6 +17,12 @@ class NightMap extends React.Component {
             zoom: 3
         }
     }
+// renderLocate() {
+//       const { sateliteLocation } = this.props;
+//       console.log('sateilte', sateliteLocation)
+//     }
+  
+
 componentDidMount() {
     this.map = L.map(`map`, {
         center: [52, 13],
@@ -25,7 +32,6 @@ componentDidMount() {
 
     L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
       attribution: false,
-      bounds: [[-85.0511287776, -179.999999975], [85.0511287776, 179.999999975]],
       minZoom: 1,
       maxZoom: 8,
       format: 'jpg',
@@ -37,6 +43,7 @@ componentDidMount() {
     }).addTo(this.map);
   }
 
+ 
   renderSatelite() {
     const { sateliteLocation } = this.props;
     console.log('the sateilte location', sateliteLocation);
@@ -68,12 +75,13 @@ componentDidMount() {
           return L.circleMarker(latlng, geojsonMarkerOptions);
         }
       }).addTo(this.map);
-
     }
   }
 
   render() {
+    
     this.renderSatelite();
+    // this.renderLocate();
     return (
       <Wrapper width='100vw' height='100vh' id='map' />
     )
