@@ -9,6 +9,7 @@ import NavigationBar from './Components/NavigationBar.js';
 import Prediction from './AppPages/Prediction.js';
 import LandingPage from './Components/LandingPage.js'
 
+
 class App extends Component {
   render() {
     return (

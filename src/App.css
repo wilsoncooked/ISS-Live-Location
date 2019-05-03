@@ -12,17 +12,18 @@
   justify-content: space-around;
   align-items: center;
   background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
-  z-index: 10;
+  position: fixed;
+  z-index: 500 !important;
+  width: 100vw;
 }
 
-.hihi {
-  width: 20px;
-  height: 20px;
+.hamburger {
+  position: none;
 }
 
 @media only screen and (max-width: 600px) {
-  .hihi {
-    color: red;
+  .hamburger {
+    position: block;
   }
 }
 
