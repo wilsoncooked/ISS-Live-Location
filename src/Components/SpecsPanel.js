@@ -6,7 +6,6 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { light } from '@material-ui/core/styles/createPalette';
 
 const styles = theme => ({
   root: {
@@ -18,8 +17,9 @@ const styles = theme => ({
     fontWeight: theme.typography.fontWeightRegular,
   },
   expansion: {
-    backgroundColor: '#0c0620;',
-    margin: '0px',
+    position: 'fixed',
+    bottom: '0px',
+    zIndex: '10'
   },
   content: {
     backgroundColor: '#1e204d',
@@ -27,10 +27,10 @@ const styles = theme => ({
   }
 });
 
-function SpecsExpansion (props) {
+function SpecsPanel (props) {
   const { classes } = props;
   return (
-    <div className='expansion-panel'>
+    <div className={classes.expansion}>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Expansion Panel 1</Typography>
@@ -46,8 +46,8 @@ function SpecsExpansion (props) {
   );
 }
 
-SpecsExpansion.propTypes = {
+SpecsPanel.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SpecsExpansion);
+export default withStyles(styles)(SpecsPanel);

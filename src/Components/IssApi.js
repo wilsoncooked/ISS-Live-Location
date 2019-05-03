@@ -5,10 +5,22 @@ class IssApi extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      iss_position: {},
+      iss_position: {
+        longitude: 100,
+        latitude: 50,
+      },
       isLoaded: false
     };
+    this.handleUpdate = this.handleUpdate.bind(this);
+    // this.fetchSpaceStation = this.fetchSpaceStation.bind(this);
   }
+
+  handleUpdate(props) {
+    this.fetchSpaceStation()
+    console.log(this.props)
+    console.log(`handleUpdate ${this.fetchSpaceStation()}`)
+  }
+
   componentDidMount() {
     this.fetchSpaceStation();
     this.interval = setInterval(() => this.fetchSpaceStation(), 5000);
@@ -26,7 +38,10 @@ class IssApi extends React.Component {
           iss_position: data.iss_position,
           isLoaded: true
         }))
+      .catch(() => console.log('error'))
   }
+
+
 
   render() {
     return (

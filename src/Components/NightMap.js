@@ -4,23 +4,24 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    width: ${props => props.width};
-    height: ${props => props.height};
+    width: 100vw;
+    height: 100vh;
 `;
 
 class NightMap extends React.Component {
-  state = {
-    location: {
-      lat: 43.5200,
-      lng: 42.4050,
-      zoom: 10
-     }
-};
+  constructor(props) {
+    super(props);
+    this.state = {
+      latitude: 10.5200,
+      longitude: 50.4050,
+      zoom: 2
+    }
+  };
 
   componentDidMount() { 
     this.map = L.map(`map`, {
-      center: [25, 133],
-      zoom: 2.5,
+      center: [this.state.latitude, this.state.longitude],
+      zoom: [this.state.zoom],
       zoomControl: false,
     });
 
@@ -36,7 +37,7 @@ class NightMap extends React.Component {
       scrollWheelZoom: true
     }).addTo(this.map);
   }
-
+  
   renderSatelite() {
     const { sateliteLocation } = this.props;
     console.log('the sateilte location', sateliteLocation);
@@ -68,14 +69,16 @@ class NightMap extends React.Component {
           return L.circleMarker(latlng, geojsonMarkerOptions);
         }
       }).addTo(this.map);
-
     }
   }
 
   render() {
     this.renderSatelite();
     return (
-      <Wrapper width='100vw' height='100vh' id='map' />
+      <div>
+        <Wrapper id='map' />
+      Location: {props.sataliteLocation}
+      </div>
     )
   }
 }
