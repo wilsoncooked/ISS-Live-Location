@@ -4,8 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    width: ${props => props.width};
-    height: ${props => props.height};
+    width: 100vw; 
+    height: 100vh;
 `;
 
 class NightMap extends React.Component {
@@ -23,6 +23,7 @@ class NightMap extends React.Component {
       zoom: 2.5,
       zoomControl: false,
     });
+    
 
     L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
       attribution: false,
@@ -75,7 +76,10 @@ class NightMap extends React.Component {
   render() {
     this.renderSatelite();
     return (
-      <Wrapper width='100vw' height='100vh' id='map' />
+      <div>
+        <Wrapper id='map' />
+        Location: {this.props.sateliteLocation.latitude} {this.props.sateliteLocation.longitude}
+      </div>
     )
   }
 }
