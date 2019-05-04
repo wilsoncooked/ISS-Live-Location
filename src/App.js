@@ -5,9 +5,10 @@ import About from './AppPages/About.js';
 import Contact from './AppPages/Contact.js';
 import IssApi from './Components/IssApi.js';
 import Home from './AppPages/Home.js'
-import NavigationBar from './Components/NavigationBar.js';
+// import NavigationBar from './Components/NavigationBar.js';
 import Prediction from './AppPages/Prediction.js';
-import LandingPage from './Components/LandingPage.js'
+//import LandingPage from './Components/LandingPage.js'
+import SpecsPanel from './Components/SpecsPanel.js'
 
 
 
@@ -16,15 +17,16 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <LandingPage />
+          {/* <LandingPage /> */}
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/prediction" component={Prediction} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
             </Switch>
-            <NavigationBar />
-          <IssApi />
+            {/* <NavigationBar /> */}
+            <SpecsPanel />
+            <IssApi />
         </div>
       </BrowserRouter>
     );

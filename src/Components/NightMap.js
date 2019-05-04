@@ -52,10 +52,10 @@ componentDidMount() {
     if (typeof sateliteLocation.latitude !== "undefined") {
       var geojsonFeature = {
         "type": "Feature",
-        "properties": {
-          "name": "Satelite Location",
-          "popupContent": "This is where the Satelite is right now!"
-        },
+        // "properties": {
+        //   "name": "Satelite Location",
+        //   "popupContent": "This is where the Satelite is right now!"
+        // },
         "geometry": {
           "type": "Point",
           "coordinates": [sateliteLocation.longitude, sateliteLocation.latitude]
@@ -63,9 +63,9 @@ componentDidMount() {
       };
   
       var geojsonMarkerOptions = {
-        radius: 8,
+        radius: 6,
         fillColor: "#ff7800",
-        color: "#000",
+        color: "#ff7800",
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
@@ -78,13 +78,16 @@ componentDidMount() {
       }).addTo(this.map);
     }
   }
-
+//NELI END
   render() {
     
     this.renderSatelite();
     // this.renderLocate();
     return (
-      <Wrapper width='100vw' height='100vh' id='map' />
+      <div>
+        <Wrapper id='map' />
+      {/* Position: {this.props.sateliteLocation.longitude}, {this.props.sateliteLocation.latitude} */}
+      </div>
     )
   }
 }

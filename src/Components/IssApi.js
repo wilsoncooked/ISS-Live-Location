@@ -1,5 +1,6 @@
 import React from 'react';
 import NightMap from './NightMap.js';
+import SpecsPanel from './SpecsPanel'
 
 class IssApi extends React.Component {
   constructor(props) {
@@ -8,15 +9,24 @@ class IssApi extends React.Component {
       iss_position: {},
       isLoaded: false
     };
-  }
-  componentDidMount() {
-    this.fetchSpaceStation();
-    this.interval = setInterval(() => this.fetchSpaceStation(), 5000);
+    this.handleUpdate = this.handleUpdate.bind(this);
+    // this.fetchSpaceStation = this.fetchSpaceStation.bind(this);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
+  handleUpdate(props) {
+    this.fetchSpaceStation()
+    console.log(this.props)
+    console.log(`handleUpdate ${this.fetchSpaceStation()}`)
   }
+
+  componentDidMount() {
+    this.fetchSpaceStation();
+    this.interval = setInterval(() => this.fetchSpaceStation(), 500);
+  }
+
+  // componentWillUnmount() {
+  //   clearInterval(this.interval);
+  // }
 
   fetchSpaceStation = () => {
     fetch('http://api.open-notify.org/iss-now.json')
@@ -26,12 +36,16 @@ class IssApi extends React.Component {
           iss_position: data.iss_position,
           isLoaded: true
         }))
+      .catch(() => console.log('error'))
   }
+
+
 
   render() {
     return (
       <div>
         <NightMap sateliteLocation={this.state.iss_position} />
+        <SpecsPanel sateliteLocation={this.state.iss_position} />
       </div>
     )
   }

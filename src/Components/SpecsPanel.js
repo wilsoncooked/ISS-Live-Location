@@ -4,50 +4,86 @@ import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { light } from '@material-ui/core/styles/createPalette';
 
 const styles = theme => ({
   root: {
-    width: '100vw',
-    height: '50vh',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
   },
   expansion: {
-    backgroundColor: '#0c0620;',
-    margin: '0px',
+    position: 'fixed',
+    bottom: '0px',
+    zIndex: '1000 !important',
+    width: '98vw',
+    padding: '0 1vw',
   },
-  content: {
-    backgroundColor: '#1e204d',
-    width: '93vw'
+  expansionvisable: {
+    background: 'linear-gradient(135deg, #28183e 30%, #640c4d 90%)',
+    opacity: '0.9',
+    paddingLeft: '20px',
+    boxShadow: '0px -1px 50px rgba(163, 10, 252, 0.25)'
+    // border: '2px solid yellow',
+  },
+  expansionbutton: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    color: '#efe099'
+  },
+  expansionhidden: {
+    border: '2px solid yellow',
+  },
+  expansiontable: {
+    height: '30vh',
+    width: '95%',
+    textAlign: 'left',
+    color: '#efe099',
+    fontSize: '0.8em',
+    borderSpacing: '10px',
+    marginBottom: '25px',
+  },
+  tablebox: {
+    backgroundColor: 'rgba(48, 24, 104, 0.1)', 
+    boxShadow: '0px 0px 40px rgba(139, 23, 81, 0.2)',
+    borderRadius: '5px',
+    paddingLeft: '10px',
   }
 });
 
-function SpecsExpansion (props) {
+function SpecsPanel (props) {
   const { classes } = props;
   return (
-    <div className='expansion-panel'>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+    <div className={classes.expansion}>
+      <ExpansionPanel className={classes.expansionvisable}>
+        <ExpansionPanelSummary>
+          <div  className={classes.expansionbutton}>
+            <div>
+              >
+            </div>
+          </div>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
-        </ExpansionPanelDetails>
+          <table className={classes.expansiontable}>
+            <tr>
+              <td  className={classes.tablebox}>Height: 123456</td>
+              <td  className={classes.tablebox}>Longitude: 123456</td>
+              <td  className={classes.tablebox}>Latitude: 123456</td>
+            </tr>
+            <tr>
+              <td  className={classes.tablebox}>Evelation 123456</td>
+              <td  className={classes.tablebox}>Speed: 123456</td>
+              <td  className={classes.tablebox}>Rotate: 123456</td>
+            </tr>
+            <tr>
+              <td  className={classes.tablebox}>Local Time: 123456</td>
+              <td  className={classes.tablebox}>UTC Time: 123456</td>
+              <td  className={classes.tablebox}>POB: 123456</td>
+            </tr>
+          </table>
       </ExpansionPanel>
     </div>
   );
 }
 
-SpecsExpansion.propTypes = {
+SpecsPanel.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SpecsExpansion);
+export default withStyles(styles)(SpecsPanel);
