@@ -7,6 +7,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     width: ${props => props.width};
     height: ${props => props.height};
+    background-color: #0f2052;
 `;
 
 class NightMap extends React.Component {
