@@ -4,6 +4,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from './App'
 import { BrowserRouter } from 'react-router-dom';
+<<<<<<< HEAD
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 
@@ -23,6 +24,11 @@ const theme = createMuiTheme({
       }
     }
   });  
+=======
+import NightMap from './Components/NightMap.js'
+
+
+>>>>>>> be9652d65ad20add10bb4666025b76165b0c03bc
 
 ReactDOM.render(
     <MuiThemeProvider theme={theme}>
