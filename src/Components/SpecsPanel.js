@@ -19,7 +19,7 @@ const styles = theme => ({
     background: 'linear-gradient(135deg, #28183e 30%, #640c4d 90%)',
     opacity: '0.9',
     paddingLeft: '20px',
-    boxShadow: '0px -1px 50px rgba(163, 10, 252, 0.25)'
+    boxShadow: '0px -1px 20px rgba(163, 10, 252, 0.2)'
     // border: '2px solid yellow',
   },
   expansionbutton: {
