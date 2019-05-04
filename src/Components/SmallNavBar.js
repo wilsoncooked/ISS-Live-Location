@@ -1,18 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { NavLink } from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-
-const styles = {
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-}
 
 class NavDrawer extends React.Component {
   state = {
@@ -29,30 +19,34 @@ class NavDrawer extends React.Component {
     const { classes } = this.props;
 
     const sideList = (
-      <div className={classes.list}>
-        <List>
-        </List>
-      </div>
-    );
-
-    const fullList = (
-      <div className={classes.fullList}>
-        <List>
+      <div>
+        <List className="smallNavList">
+            <NavLink className="navLinksm" to="/">MAP</NavLink>
+            <NavLink className="navLinksm" to="/prediction/">PREDICTION</NavLink>
+            <NavLink className="navLinksm" to="/about/">ABOUT</NavLink>
+            <NavLink className="navLinksm" to="/contact/">CONTACT</NavLink>
         </List>
       </div>
     );
 
     return (
       <div>
-        <Button className={classes.hamburger} onClick={this.toggleDrawer('right', true)}>Open Right</Button>
+        <div
+            className="hamburger" 
+            onClick={this.toggleDrawer('right', true)}>
+            <div className='hamburgerLine'></div>
+            <div className='hamburgerLine'></div>
+            <div className='hamburgerLine'></div>
+            </div>
         <Drawer anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
           <div
+            className='wholePageNav'
             tabIndex={0}
             role="button"
             onClick={this.toggleDrawer('right', false)}
             onKeyDown={this.toggleDrawer('right', false)}
           >
-            {sideList}
+           {sideList}
           </div>
         </Drawer>
       </div>
@@ -64,4 +58,4 @@ NavDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NavDrawer);
+export default (NavDrawer);
