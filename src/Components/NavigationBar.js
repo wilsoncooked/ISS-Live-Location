@@ -10,6 +10,11 @@ const styles = {
   root: {
     flexGrow: 1,
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    color: 'yellow',
+  },
+  bigIndicator: {
+    backgroundColor: 'yellow',
+    color: 'yellow',
   }
 };
 
@@ -29,6 +34,7 @@ class NavigationBar extends React.Component {
       <paper>
             <Tabs 
               classes={{ root: classes.root}}
+              indicatorClassName={classes.bigIndicator}
               value={this.state.value}
               onChange={this.handleChange}
               indicatorColor="primary"
@@ -36,8 +42,8 @@ class NavigationBar extends React.Component {
               centered
             >
               <Tab 
-                label={<NavLink className="navLink" to="/">MAP</NavLink>} 
-                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+                label={<NavLink className="navLink" to="/">MAP</NavLink>}
+                classes={{ root: classes.tabRoot, selected: classes.tabSelected}}
                 style={{color: '#ffda07'}}
                 />
               <Tab 
