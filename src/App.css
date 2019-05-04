@@ -4,5 +4,9 @@
 
 .navLink {
   text-decoration: none;
-  color: rgb(255, 217, 0);
+  color: rgb(146, 126, 10);
+}
+.bignavbar {
+  position: absolute;
+
 }

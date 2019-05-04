@@ -25,7 +25,7 @@ class NavigationBar extends React.Component {
     const { classes } = this.props;
 
     return (
-      <paper>
+      <paper className="bignavebar">
             <Tabs 
               classes={{ root: classes.root}}
               value={this.state.value}

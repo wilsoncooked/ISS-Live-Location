@@ -20,7 +20,7 @@ class IssApi extends React.Component {
 
   componentDidMount() {
     this.fetchSpaceStation();
-    this.interval = setInterval(() => this.fetchSpaceStation(), 5000);
+    this.interval = setInterval(() => this.fetchSpaceStation(), 500);
   }
 
   // componentWillUnmount() {

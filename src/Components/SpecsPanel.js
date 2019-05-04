@@ -4,42 +4,72 @@ import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const styles = theme => ({
   root: {
-    width: '100vw',
-    height: '50vh',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
   },
   expansion: {
     position: 'fixed',
     bottom: '0px',
-    zIndex: '10'
+    zIndex: '1000 !important',
+    width: '98vw',
+    padding: '0 1vw',
   },
-  content: {
-    backgroundColor: '#1e204d',
-    width: '93vw'
+  expansionvisable: {
+    background: 'linear-gradient(135deg, #28183e 30%, #640c4d 90%)',
+    opacity: '0.8',
+    paddingLeft: '20px',
+    boxShadow: '1px 1px 10px rgba(146, 126, 10, 0.3)'
+    // border: '2px solid yellow',
+  },
+  expansionbutton: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    color: 'Yellow'
+  },
+  expansionhidden: {
+    height: '30vh',
+  },
+  expansiontable: {
+    height: '100%',
+    width: '100%',
+    textAlign: 'left',
+    color: 'Yellow'
   }
+
 });
 
 function SpecsPanel (props) {
   const { classes } = props;
   return (
     <div className={classes.expansion}>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+      <ExpansionPanel className={classes.expansionvisable}>
+        <ExpansionPanelSummary>
+          <div  className={classes.expansionbutton}>
+            <div>
+              >
+            </div>
+          </div>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography>
+        <ExpansionPanelDetails className={classes.expansionhidden}>
+          <table className={classes.expansiontable}>
+            <tr>
+              <td>Height: </td>
+              <td>Longitude: </td>
+              <td>Latitude: </td>
+            </tr>
+            <tr>
+              <td>Evelation </td>
+              <td>Speed: </td>
+              <td>RA: </td>
+            </tr>
+            <tr>
+              <td>Local Time: </td>
+              <td>UTC Time: </td>
+              <td>POB: </td>
+            </tr>
+          </table>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

@@ -4,8 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    width: 100px;
-    height: 100px;
+    width: 100vw;
+    height: 100vh;
 `;
 
 class NightMap extends React.Component {
@@ -56,9 +56,9 @@ class NightMap extends React.Component {
       };
   
       var geojsonMarkerOptions = {
-        radius: 8,
+        radius: 6,
         fillColor: "#ff7800",
-        color: "#000",
+        color: "#ff7800",
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
@@ -77,7 +77,7 @@ class NightMap extends React.Component {
     return (
       <div>
         <Wrapper id='map' />
-      Position: {this.props.sateliteLocation.longitude}, {this.props.sateliteLocation.latitude}
+      {/* Position: {this.props.sateliteLocation.longitude}, {this.props.sateliteLocation.latitude} */}
       </div>
     )
   }
