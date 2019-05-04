@@ -8,13 +8,21 @@
 
 .navLink {
   text-decoration: none;
-  color: rgb(255, 217, 0);
-  padding: 15px;
+  font-size: 1.2em;
+  letter-spacing: 2px;
+  font-weight: 200;
+  color: #f5d329;
+  padding: 10px;
+  border-bottom: 2px solid rgba(163, 10, 252, 0.0);
+  background: radial-gradient(rgba(153, 71, 135, 0.1) 1%, rgba(163, 10, 252, 0.0) 90%);
+}
+.leaflet-container {
+  background: black;
 }
 
 .navLink.active {
-  text-decoration: underline;
   transition: all 300ms ease-in-out;
+  border-bottom: 2px solid #eed34a;
 }
 
 .navbarcenter {
@@ -24,18 +32,19 @@
 }
 
 .navbar {
+  padding: 5px;
   display: block;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
   z-index: 500 !important;
-  width: 100vw;
-  max-width: 800px;
+  width: 50%;
+  text-shadow: 1px 1px 30px  rgb(247, 214, 202);
 }
 
 .navLink {
-  margin: 5px 30px;
+  margin: 10px;
 }
 
 .hamburger {
@@ -47,7 +56,7 @@
 .hamburgerLine {
   width: 35px;
   height: 3px;
-  background-color: yellow;
+  background-color: #f1d751;
   margin: 8px;
 }
 
@@ -80,7 +89,7 @@
   margin: 30px;
   font-size: 1.7em;
   text-decoration: none;
-  color: rgb(255, 217, 0);
+  color: #dfcb66;
   
 }
 
