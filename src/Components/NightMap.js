@@ -24,11 +24,12 @@ class NightMap extends React.Component {
 //     }
   
 
-componentDidMount() {
+  componentDidMount() { 
+    // const position = [this.state.lat, this.state.lng];
     this.map = L.map(`map`, {
-        center: [52, 13],
-        zoom: 3,
-        zoomControl: false,
+      center: [26, 26],
+      zoom: 2.2,
+      zoomControl: false,
     });
 
     L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
@@ -84,7 +85,7 @@ componentDidMount() {
     this.renderSatelite();
     // this.renderLocate();
     return (
-      <Wrapper width='100vw' height='100vh' id='map' />
+      <Wrapper width='100vw' height='100vh'  id='map' />
     )
   }
 }

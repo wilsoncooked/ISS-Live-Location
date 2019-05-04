@@ -1,18 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import {NavLink} from 'react-router-dom';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-
-const styles = {
-  root: {
-    flexGrow: 1,
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  }
-};
+import { NavLink } from 'react-router-dom';
+import NavDrawer from './SmallNavBar.js'
 
 class NavigationBar extends React.Component {
+  
   state = {
     value: 0,
   };
@@ -22,46 +13,24 @@ class NavigationBar extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-
     return (
-      <paper className="bignavebar">
-            <Tabs 
-              classes={{ root: classes.root}}
+        <div>
+          <div className="navbarcenter">
+            <div 
+              className="navbar"
               value={this.state.value}
               onChange={this.handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              centered
-            >
-              <Tab 
-                label={<NavLink className="navLink" to="/">MAP</NavLink>} 
-                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-                style={{color: '#ffda07'}}
-                />
-              <Tab 
-                label={<NavLink className="navLink" to="/prediction/">PREDICTION</NavLink>} 
-                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-                style={{color: '#ffda07'}}
-                />
-              <Tab 
-                label={<NavLink className="navLink" to="/about/">ABOUT</NavLink>} 
-                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-                style={{color: '#ffda07'}}
-                />
-              <Tab 
-                label={<NavLink className="navLink" to="/contact/">CONTACT</NavLink>} 
-                classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-                style={{color: '#ffda07'}}
-                />
-            </Tabs>
-        </paper>
+              >
+                <NavLink className="navLink" exact to="/">MAP</NavLink>
+                <NavLink className="navLink" to="/prediction/">PREDICTION</NavLink>
+                <NavLink className="navLink" to="/about/">ABOUT</NavLink>
+                <NavLink className="navLink" to="/contact/">CONTACT</NavLink>
+            </div>
+          </div>
+          <NavDrawer /> 
+        </div>
     );
   }
 }
 
-NavigationBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(NavigationBar);
+export default NavigationBar;
