@@ -17,9 +17,9 @@ const styles = theme => ({
   },
   expansionvisable: {
     background: 'linear-gradient(135deg, #28183e 30%, #640c4d 90%)',
-    opacity: '0.8',
+    opacity: '0.85',
     paddingLeft: '20px',
-    boxShadow: '1px 1px 10px rgba(146, 126, 10, 0.3)'
+    boxShadow: '0px -1px 50px rgba(163, 10, 252, 0.25)'
     // border: '2px solid yellow',
   },
   expansionbutton: {

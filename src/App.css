@@ -2,11 +2,11 @@
   text-align: center;
 }
 
-.navLink {
+/* .navLink {
   text-decoration: none;
-  color: rgb(146, 126, 10);
-}
+  color: hsl(51, 87%, 31%);
+} */
 .bignavbar {
   position: absolute;
-
+  color: rgb(163, 10, 252);
 }
