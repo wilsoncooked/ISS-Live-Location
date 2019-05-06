@@ -24,9 +24,9 @@ class IssApi extends React.Component {
     this.interval = setInterval(() => this.fetchSpaceStation(), 500);
   }
 
-  // componentWillUnmount() {
-  //   clearInterval(this.interval);
-  // }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   fetchSpaceStation = () => {
     fetch('http://api.open-notify.org/iss-now.json')
