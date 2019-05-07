@@ -1,56 +1,44 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-
-const styles = {
-  root: {
-    flexGrow: 1,
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  }
-};
+import { NavLink } from 'react-router-dom';
+import NavDrawer from './SmallNavBar.js'
 
 class NavigationBar extends React.Component {
+  
   state = {
     value: 0,
+    working: false
   };
-
   handleChange = (event, value) => {
     this.setState({ value });
+    console.log(this.state);
   };
 
+  // handleClick = () => {
+  //   this.setState({ working: !this.state.working },
+  // }
   render() {
-    const { classes } = this.props;
 
     return (
-      <paper>
-            <Tabs 
-              classes={{ root: classes.root}}
+        <div>
+          <div className="navbarcenter">
+            <div 
+              className="navbar"
               value={this.state.value}
               onChange={this.handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              centered
-            >
-              <Tab label="Item One"
-              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-              style={{color: '#ffda07'}}/>
-              <Tab label="Item Two" 
-              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-              style={{color: '#ffda07'}}/>
-              <Tab label="Item Three" 
-              classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-              style={{color: '#ffda07'}}/>
-            </Tabs>
-        </paper>
+              >
+              <ul>
+                <li><NavLink className="navLink navLink1" exact to="/">Map</NavLink></li>
+                <li><NavLink className="navLink navLink2" to="/prediction/">PREDICTION</NavLink></li>
+                <li><NavLink className="navLink navLink3" to="/about/">ABOUT</NavLink></li>
+                <li><NavLink className="navLink navLink4" to="/contact/">CONTACT</NavLink></li>
+                {/* <hr /> */}
+              </ul>
+            </div>
+          </div>
+          <NavDrawer /> 
+        </div>
     );
   }
 }
 
-NavigationBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(NavigationBar);
+export default NavigationBar;
