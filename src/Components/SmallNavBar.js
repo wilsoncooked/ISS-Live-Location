@@ -1,28 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
+import { NavLink } from 'react-router-dom';
+import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 
+class NavDrawer extends React.Component {
+  state = {
+    right: false,
+  };
 
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open,
+    });
+  };
 
-class SwipeableTemporaryDrawer extends React.Component {
+  render() {
+    const { classes } = this.props;
+
+    const sideList = (
+      <div>
+        <List className="smallNavList">
+            <NavLink className="navLinksm" to="/">MAP</NavLink>
+            <NavLink className="navLinksm" to="/prediction/">PREDICTION</NavLink>
+            <NavLink className="navLinksm" to="/about/">ABOUT</NavLink>
+            <NavLink className="navLinksm" to="/contact/">CONTACT</NavLink>
+        </List>
+      </div>
+    );
 
     return (
-
+      <div>
+        <div
+            className="hamburger" 
+            onClick={this.toggleDrawer('right', true)}>
+            <div className='hamburgerLine'></div>
+            <div className='hamburgerLine'></div>
+            <div className='hamburgerLine'></div>
+            </div>
+        <Drawer anchor="right" open={this.state.right} onClose={this.toggleDrawer('right', false)}>
+          <div
+            className='wholePageNav'
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('right', false)}
+            onKeyDown={this.toggleDrawer('right', false)}
+          >
+           {sideList}
+          </div>
+        </Drawer>
+      </div>
     );
   }
 }
 
-SwipeableTemporaryDrawer.propTypes = {
+NavDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SwipeableTemporaryDrawer);
+export default (NavDrawer);
