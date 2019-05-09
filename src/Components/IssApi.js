@@ -1,5 +1,7 @@
 import React from 'react';
 import NightMap from './NightMap.js';
+import SpecsPanel from './SpecsPanel'
+import UserLocation from './UserLocation.js';
 
 class IssApi extends React.Component {
   constructor(props) {
@@ -32,6 +34,8 @@ class IssApi extends React.Component {
     return (
       <div>
         <NightMap sateliteLocation={this.state.iss_position} />
+        <SpecsPanel sateliteLocation={this.state.iss_position} />
+        <UserLocation Geolocation={this.props.isGeolocationEnabled} />
       </div>
     )
   }
