@@ -1,17 +1,18 @@
 import React from 'react';
 import NightMap from './NightMap.js';
-import SpecsPanel from './SpecsPanel'
-import UserLocation from './UserLocation.js';
+import SpecsPanel from './SpecsPanel';
+import UserLocation from './UserLocation';
 
 class IssApi extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       iss_position: {},
+      // Using fake data.
+      user_position: { latitude: '52.5', longitude: '13.4' },
       isLoaded: false
     };
     this.handleUpdate = this.handleUpdate.bind(this);
-    // this.fetchSpaceStation = this.fetchSpaceStation.bind(this);
   }
 
   handleUpdate(props) {
@@ -25,10 +26,6 @@ class IssApi extends React.Component {
     this.interval = setInterval(() => this.fetchSpaceStation(), 500);
   }
 
-  // componentWillUnmount() {
-  //   clearInterval(this.interval);
-  // }
-
   fetchSpaceStation = () => {
     fetch('http://api.open-notify.org/iss-now.json')
       .then(response => response.json())
@@ -40,12 +37,13 @@ class IssApi extends React.Component {
       .catch(() => console.log('error'))
   }
 
-
-
   render() {
     return (
       <div>
-        <NightMap sateliteLocation={this.state.iss_position} />
+        <NightMap
+          sateliteLocation={this.state.iss_position}
+          userLocation={this.state.user_position}
+        />
         <SpecsPanel sateliteLocation={this.state.iss_position} />
         <UserLocation Geolocation={this.props.isGeolocationEnabled} />
       </div>
