@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import About from './AppPages/About.js';
-import Contact from './AppPages/Contact.js';
+import ContactPage from './AppPages/Contact.js';
 import IssApi from './Components/IssApi.js';
 import Home from './AppPages/Home.js'
 import NavigationBar from './Components/NavigationBar.js';
 import Prediction from './AppPages/Prediction.js';
 import LandingPage from './Components/LandingPage.js'
-import SpecsPanel  from './Components/SpecsPanel.js'
-
 
 class App extends Component {
   render() {
@@ -21,10 +19,9 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/prediction" component={Prediction} />
               <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
+              <Route path="/contact" component={ContactPage} />
             </Switch>
             <NavigationBar />
-            <SpecsPanel />
             <IssApi />
         </div>
       </BrowserRouter>

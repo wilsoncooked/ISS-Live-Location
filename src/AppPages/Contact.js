@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react';
+import '../Styles/ContactPage.css'
+import ContactForm from '../Components/ContactForm.js';
 
 
-class Contact extends React.Component {
+class ContactPage extends React.Component {
     render () {
         return (
             <div>
+                <ContactForm className="contactAnimation"/>
             </div>
         )
     }
 }
 
-export default Contact;
+export default ContactPage;
