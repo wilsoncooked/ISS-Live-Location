@@ -143,7 +143,7 @@ class SpecsPanel extends React.Component {
             </div>
             <div className={classes.specsItem}>
               <p  className={classes.title}>People in Space:</p>
-              <span className={classes.spanData}>{this.props.peopleInSpace.numberOfPeople}</span>
+              <span className={classes.spanData}></span>
             </div>
             <div className={classes.specsItem}>
               <p  className={classes.title}>Years in Orbit:</p>
