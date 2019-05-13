@@ -36,21 +36,17 @@ class TemporaryDrawer extends React.Component {
             onKeyDown={this.toggleDrawer('bottom', false)}
           >
             <div className={classes.fullPage}>
-            <div className="landingContainer">
+            <div className="container">
                 <div className="planet"></div>
                 <div className="gravity">
                     <div className="satellite"></div>
                 </div>
-                {/* <div className="buttonContainer"> */}
-                  <div className="circle1"></div>
-                  <div className="circle2"></div>
-                  <button
-                      className="actionbutton"
-                      onClick={this.toggleDrawer('bottom', true)}
-                  >
-                      EXPLORE
-                  </button>
-                {/* </div> */}
+                <button
+                    className="actionbutton"
+                    onClick={this.toggleDrawer('bottom', true)}
+                >
+                    EXPLORE
+                </button>
                 </div>
             </div>
           </div>
