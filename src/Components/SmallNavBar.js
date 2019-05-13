@@ -14,6 +14,7 @@ class NavDrawer extends React.Component {
       [side]: open,
     });
   };
+  
 
   render() {
     const { classes } = this.props;
@@ -22,7 +23,6 @@ class NavDrawer extends React.Component {
       <div>
         <List className="smallNavList">
             <NavLink className="navLinksm" to="/">MAP</NavLink>
-            <NavLink className="navLinksm" to="/prediction/">PREDICTION</NavLink>
             <NavLink className="navLinksm" to="/about/">ABOUT</NavLink>
             <NavLink className="navLinksm" to="/contact/">CONTACT</NavLink>
         </List>

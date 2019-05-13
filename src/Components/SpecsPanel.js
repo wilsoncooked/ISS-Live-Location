@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import PeopleInSpace from './PeopleInSpace.js'
 
 const styles = theme => ({
   root: {
@@ -31,27 +31,79 @@ const styles = theme => ({
   expansionhidden: {
     border: '2px solid yellow',
   },
-  expansiontable: {
-    height: '30vh',
+  specsDetails: {
     width: '95%',
     textAlign: 'left',
     color: '#efe099',
     fontSize: '0.8em',
-    borderSpacing: '10px',
+    // borderSpacing: '10px',
     marginBottom: '25px',
+    display: 'flex',
+    flexFlow: 'wrap',
+    justifyContent: 'space-between',
   },
-  tablebox: {
+  specsItem: {
     backgroundColor: 'rgba(48, 24, 104, 0.1)', 
     boxShadow: '0px 0px 40px rgba(139, 23, 81, 0.2)',
     borderRadius: '5px',
-    paddingLeft: '10px',
+    padding: '10px',
+    textAlign: 'center',
+    minWidth: '100px',
+    maxWidth: '200px'
+  },
+  spanData: {
+    fontSize: '1.3em',
+    textShadow: '1px 1px 10px rgba(176, 196, 222, 0.5)'
+  },
+  title: {
+    margin: '0px',
+    fontSize: '0.9em',
+    color: 'orange'
   }
 });
 
-function SpecsPanel (props) {
-  const { classes } = props;
-  return (
-    <div className={classes.expansion}>
+class SpecsPanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hour: new Date().getHours(),
+      minute: new Date().getMinutes(),
+      second: new Date().getSeconds(),
+      isWorking: false
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      hour: new Date().getHours(),
+      minute: new Date().getMinutes(),
+      second: new Date().getSeconds(),
+    })
+    this.setState({isWorking: true})
+  }
+  
+  componentDidUpdate() {
+    if (this.state.isWorking === true) {
+      this.interval = setInterval(() => 
+      this.setState({       
+        hour: new Date().getHours(),
+        minute: new Date().getMinutes(),
+        second: new Date().getSeconds(), 
+      }), 1000);
+      this.setState({isWorking: false})
+    }
+  }
+  
+  componentWillUnmount() {
+    console.log('DESTROYED!!!')
+    clearInterval(this.interval)  
+  }
+  
+    render () {
+      const { classes } = this.props;
+
+      return (
+      <div className={classes.expansion}>
       <ExpansionPanel className={classes.expansionvisable}>
         <ExpansionPanelSummary>
           <div  className={classes.expansionbutton}>
@@ -60,26 +112,48 @@ function SpecsPanel (props) {
             </div>
           </div>
         </ExpansionPanelSummary>
-          <table className={classes.expansiontable}>
-            <tr>
-              <td  className={classes.tablebox}>Height: 123456</td>
-              <td  className={classes.tablebox}>Longitude: 123456</td>
-              <td  className={classes.tablebox}>Latitude: 123456</td>
-            </tr>
-            <tr>
-              <td  className={classes.tablebox}>Evelation 123456</td>
-              <td  className={classes.tablebox}>Speed: 123456</td>
-              <td  className={classes.tablebox}>Rotate: 123456</td>
-            </tr>
-            <tr>
-              <td  className={classes.tablebox}>Local Time: 123456</td>
-              <td  className={classes.tablebox}>UTC Time: 123456</td>
-              <td  className={classes.tablebox}>POB: 123456</td>
-            </tr>
-          </table>
+          <div className={classes.specsDetails}>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Avg Height:</p>
+              <span className={classes.spanData}>408.5 km</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Longitude:</p>
+              <span className={classes.spanData}>{this.props.sateliteLocation.longitude}</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Latitude:</p>
+              <span className={classes.spanData}>{this.props.sateliteLocation.latitude}</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Speed:</p>
+              <span className={classes.spanData}>7.66 km/s</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Orbit time:</p>
+              <span className={classes.spanData}>92.68</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Orbits p/d:</p>
+              <span className={classes.spanData}>15.54</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Local Time:</p>
+              <span className={classes.spanData}>{this.state.hour}:{this.state.minute}:{this.state.second}</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>People in Space:</p>
+              <span className={classes.spanData}>{this.props.number}</span>
+            </div>
+            <div className={classes.specsItem}>
+              <p  className={classes.title}>Years in Orbit:</p>
+              <span className={classes.spanData}>20y 5m</span>
+            </div>
+          </div>
       </ExpansionPanel>
     </div>
-  );
+      )
+    }
 }
 
 SpecsPanel.propTypes = {

@@ -14,7 +14,7 @@
   color: #f5d329;
   padding: 10px;
   border-bottom: 2px solid rgba(163, 10, 252, 0.0);
-  background: radial-gradient(rgba(153, 71, 135, 0.1) 1%, rgba(163, 10, 252, 0.0) 90%);
+  background: radial-gradient(rgba(161, 67, 141, 0.1) 1%, rgba(62, 10, 252, 0) 90%);
 }
 .leaflet-container {
   background: black;
@@ -107,4 +107,14 @@
   .navbar {
     display: none;
   }
+}
+
+@media only screen and (min-width: 600px) {
+  .contactFormWrapper {
+    width: 600px;
+  }
+}
+
+.contactAnimation {
+  transition: all 4s ease-in-out;
 }

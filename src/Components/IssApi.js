@@ -2,6 +2,7 @@ import React from 'react';
 import NightMap from './NightMap.js';
 import SpecsPanel from './SpecsPanel';
 import UserLocation from './UserLocation';
+import PeopleInSpace from './PeopleInSpace';
 
 class IssApi extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class IssApi extends React.Component {
 
   componentDidMount() {
     this.fetchSpaceStation();
-    this.interval = setInterval(() => this.fetchSpaceStation(), 500);
+    this.interval = setInterval(() => this.fetchSpaceStation(), 1000);
   }
 
   fetchSpaceStation = () => {
@@ -40,11 +41,14 @@ class IssApi extends React.Component {
   render() {
     return (
       <div>
-        <NightMap
-          sateliteLocation={this.state.iss_position}
-          userLocation={this.state.user_position}
-        />
-        <SpecsPanel sateliteLocation={this.state.iss_position} />
+        <NightMap 
+              sateliteLocation={this.state.iss_position}
+              userLocation={this.state.user_position}/>
+        <SpecsPanel 
+              sateliteLocation={this.state.iss_position} 
+              number={this.props.number}
+          />
+        <PeopleInSpace />
         <UserLocation Geolocation={this.props.isGeolocationEnabled} />
       </div>
     )

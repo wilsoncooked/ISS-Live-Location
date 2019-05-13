@@ -22,7 +22,6 @@ class NavigationBar extends React.Component {
               onChange={this.handleChange}
               >
                 <NavLink className="navLink" exact to="/">MAP</NavLink>
-                <NavLink className="navLink" to="/prediction/">PREDICTION</NavLink>
                 <NavLink className="navLink" to="/about/">ABOUT</NavLink>
                 <NavLink className="navLink" to="/contact/">CONTACT</NavLink>
             </div>

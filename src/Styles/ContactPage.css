@@ -1,0 +1,48 @@
+.ContactForm {
+    z-index: 1000 !important;
+    background: #2c235c;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+
+}
+
+fieldset {
+    border: none;
+}
+
+.formHeading {
+    font-size: 2em;
+    margin: 0;
+    padding: 10px;
+}
+
+.form-data {
+    display: flex;
+    flex-direction: column;    
+}
+
+.contactBox {
+    background: #ffffff;
+    border: 2px solid rgba(229, 128, 207, 0.3);
+    padding: 15px;
+    font-size: 1em;
+    margin: 5%;
+    background-size: 
+}
+
+#contactComment {
+    padding: 15% 5%;
+}
+
+::placeholder {
+    color: pink;
+}
+
+.sendButton {
+    background: #ffffff;
+    border: 1px solid linear-gradient(135deg, rgb(231, 215, 65) 30%, rgba(248, 233, 96, 0.2) 90%);
+    padding: 15px;
+    font-size: 1em;
+    margin: 20px;
+}
