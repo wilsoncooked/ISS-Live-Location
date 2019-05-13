@@ -49,6 +49,7 @@ class NightMap extends React.Component {
         }
       }).addTo(this.map);
     }
+  }
 renderLocate() {
       const { sateliteLocation } = this.props;
       // console.log('sateilte', sateliteLocation)

@@ -1,5 +1,5 @@
 import React from 'react';
-import {geolocated} from 'react-geolocated';
+import { geolocated } from 'react-geolocated';
  
 class UserLocation extends React.Component {
   render() {
