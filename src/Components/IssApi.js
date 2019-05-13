@@ -1,6 +1,7 @@
 import React from 'react';
 import NightMap from './NightMap.js';
-import SpecsPanel from './SpecsPanel'
+import SpecsPanel from './SpecsPanel';
+import PeopleInSpace from './PeopleInSpace';
 
 class IssApi extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class IssApi extends React.Component {
 
   componentDidMount() {
     this.fetchSpaceStation();
-    this.interval = setInterval(() => this.fetchSpaceStation(), 500);
+    this.interval = setInterval(() => this.fetchSpaceStation(), 1000);
   }
 
   // componentWillUnmount() {
@@ -45,7 +46,10 @@ class IssApi extends React.Component {
     return (
       <div>
         <NightMap sateliteLocation={this.state.iss_position} />
-        <SpecsPanel sateliteLocation={this.state.iss_position} />
+        <SpecsPanel sateliteLocation={this.state.iss_position} 
+          number={this.props.number}
+          />
+        <PeopleInSpace />
       </div>
     )
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
 class Prediction extends React.Component {
    render () {
@@ -9,4 +9,4 @@ class Prediction extends React.Component {
    }
 }
 
-export default Prediction;
+// export default Prediction;

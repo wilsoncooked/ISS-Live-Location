@@ -14,6 +14,7 @@ class NavDrawer extends React.Component {
       [side]: open,
     });
   };
+  
 
   render() {
     const { classes } = this.props;
