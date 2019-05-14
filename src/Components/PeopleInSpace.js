@@ -1,4 +1,5 @@
 import React from 'react';
+import SpecsPanel from './SpecsPanel';
 
 class PeopleInSpace extends React.Component {
   constructor(props) {
@@ -20,12 +21,12 @@ class PeopleInSpace extends React.Component {
 
   componentDidMount() {
     this.fetchPeopleInSpace();
-    this.interval = setInterval(() => this.fetchPeopleInSpace(), 10000);
+    this.interval = setInterval(() => this.fetchPeopleInSpace(), 1000);
   }
 
-  // componentWillUnmount() {
-  //   clearInterval(this.interval);
-  // }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
 
   fetchPeopleInSpace = () => {
     fetch('http://api.open-notify.org/astros.json')
@@ -37,7 +38,7 @@ class PeopleInSpace extends React.Component {
           isLoaded: true
         }))
       .catch(() => console.log('error'))
-      console.log(this.state.number)
+      // console.log(this.state.number)
   }
 
 
@@ -46,6 +47,7 @@ class PeopleInSpace extends React.Component {
 
     return (
       <div>
+        {this.state.number}
       </div>
     )
   }

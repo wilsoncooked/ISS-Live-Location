@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-// import PeopleInSpace from './PeopleInSpace.js'
+import PeoplesNames from './PeoplesNames';
 
 const styles = theme => ({
   root: {
@@ -143,7 +143,8 @@ class SpecsPanel extends React.Component {
             </div>
             <div className={classes.specsItem}>
               <p  className={classes.title}>People in Space:</p>
-              <span className={classes.spanData}></span>
+              <span className={classes.spanData}>{this.props.numberOfPeople}</span>
+              <PeoplesNames />
             </div>
             <div className={classes.specsItem}>
               <p  className={classes.title}>Years in Orbit:</p>
