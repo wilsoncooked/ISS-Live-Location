@@ -42,13 +42,13 @@ class IssApi extends React.Component {
     const { numberOfPeople } = this.props;
     return (
       <div>
-        <NightMap 
-              sateliteLocation={this.state.iss_position}
-              userLocation={this.state.user_position}/>
-        <SpecsPanel 
-              sateliteLocation={this.state.iss_position} 
-              PeopleInSpace={this.state.numberOfPeople}
-          />
+        <NightMap
+          sateliteLocation={this.state.iss_position}
+          userLocation={this.state.user_position} />
+        <SpecsPanel
+          sateliteLocation={this.state.iss_position}
+          PeopleInSpace={this.state.numberOfPeople}
+        />
         <UserLocation Geolocation={this.props.isGeolocationEnabled} />
       </div>
     )
