@@ -47,7 +47,7 @@ class PeopleInSpace extends React.Component {
 
     return (
       <div>
-        {this.state.number}
+        {/* {this.state.number} */}
       </div>
     )
   }
