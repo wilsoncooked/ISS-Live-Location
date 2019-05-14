@@ -4,7 +4,7 @@ class PeopleInSpace extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      number: '1',
+      numberOfPeople: '1',
       people: [],
       isLoaded: false
     };
@@ -14,8 +14,8 @@ class PeopleInSpace extends React.Component {
 
   handleUpdate() {
     this.fetchPeopleInSpace()
-    console.log(this.state)
-    console.log(this.fetchPeopleInSpace())
+    console.log(this.state.number)
+    // console.log(this.fetchPeopleInSpace())
   }
 
   componentDidMount() {
@@ -37,13 +37,13 @@ class PeopleInSpace extends React.Component {
           isLoaded: true
         }))
       .catch(() => console.log('error'))
-      console.log(this.state.people)
+      console.log(this.state.number)
   }
 
 
 
   render() {
-    const { number } = this.props;
+
     return (
       <div>
       </div>
