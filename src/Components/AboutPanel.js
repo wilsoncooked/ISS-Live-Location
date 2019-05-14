@@ -66,15 +66,15 @@ function AboutPanel(props) {
           </div>
           <div className="child-container">
             <p className="text-styles">The International Space Station (ISS) is an unparalleled international scientific and technological cooperative venture that will usher in a new era of human space exploration and research and provide benefits to people on Earth.</p>
-            <p>By <a className="text-styles" target="_blank" href="https://www.nasa.gov/">NASA</a></p>
+            <p>By <a className="text-styles" target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/">NASA</a></p>
           </div>
         </div>
         <div className="footer-container">
           <div className="text-styles">
             <span>Copyright &copy; 2019 </span>
-            <a className="text-styles" target="_blank" href="https://github.com/Wils0nC00k">Sarah Wilsoncook</a>
+            <a className="text-styles" target="_blank" rel="noopener noreferrer" href="https://github.com/Wils0nC00k">Sarah Wilsoncook</a>
             <span> and</span>
-            <a className="text-styles" target="_blank" href="https://github.com/nelidiakonidze">Neli Diakonidze</a>
+            <a className="text-styles" target="_blank" rel="noopener noreferrer" href="https://github.com/nelidiakonidze">Neli Diakonidze</a>
           </div>
         </div>
         <NavLink className={classes.cross} exact to="/">X</NavLink>

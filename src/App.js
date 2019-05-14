@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { geolocated } from 'react-geolocated';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import About from './AppPages/About.js';
@@ -8,8 +9,8 @@ import IssApi from './Components/IssApi.js';
 import Home from './AppPages/Home.js'
 import NavigationBar from './Components/NavigationBar.js';
 import Prediction from './AppPages/Prediction.js';
-import LandingPage from './Components/LandingPage.js'
-import PeopleInSpace from './Components/PeopleInSpace.js'
+import LandingPage from './Components/LandingPage.js';
+import PeopleInSpace from './Components/PeopleInSpace.js';
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
               <Route path="/contact" component={ContactPage} />
             </Switch>
             <NavigationBar />
-            <IssApi />
+            <IssApi userLocation={this.props.coords} />
             <PeopleInSpace />
             {/* <AltitudeApi /> */}
         </div>
@@ -33,4 +34,9 @@ class App extends Component {
   }
 }
 
-export default App
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false,
+  },
+  userDecisionTimeout: 5000,
+})(App);

@@ -10,47 +10,6 @@ const Wrapper = styled.div`
 `;
 
 class NightMap extends React.Component {
-  state = {
-    location: {
-      lat: 52.5200,
-      lng: 13.4050,
-      zoom: 3
-    }
-  }
-
-  renderLocation() {
-    const { userLocation } = this.props;
-
-    if (typeof userLocation.latitude !== "undefined" && typeof this.map !== "undefined") {
-      var geojsonFeature = {
-        "type": "Feature",
-        "properties": {
-          "name": "User Location",
-          "popupContent": "This is your position right now!"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [userLocation.longitude, userLocation.latitude]
-        }
-      };
-
-      var geojsonMarkerOptions = {
-        radius: 12,
-        fillColor: "#f00",
-        color: "#f00",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8
-      };
-
-      L.geoJSON(geojsonFeature, {
-        pointToLayer: function (feature, latlng) {
-          return L.circleMarker(latlng, geojsonMarkerOptions);
-        }
-      }).addTo(this.map);
-    }
-  }
-
   componentDidMount() {
     this.map = L.map(`map`, {
       center: [26, 26],
@@ -69,6 +28,42 @@ class NightMap extends React.Component {
       keyboard: true,
       scrollWheelZoom: true
     }).addTo(this.map);
+  }
+
+  renderLocation() {
+    const { userLocation } = this.props;
+
+    if (!userLocation) {
+      return;
+    }
+    
+    if (typeof userLocation.latitude !== "undefined" && typeof this.map !== "undefined") {
+      var geojsonFeature = {
+        "type": "Feature",
+        "properties": {
+          "name": "User Location",
+          "popupContent": "This is your position right now!"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [userLocation.longitude, userLocation.latitude]
+        }
+      };
+
+      var geojsonMarkerOptions = {
+        radius: 7,
+        fillColor: "#cc3399",
+        color: "#cc3399",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+      };
+      L.geoJSON(geojsonFeature, {
+        pointToLayer: function (feature, latlng) {
+          return L.circleMarker(latlng, geojsonMarkerOptions);
+        }
+      }).addTo(this.map);
+    }
   }
 
   renderSatelite() {

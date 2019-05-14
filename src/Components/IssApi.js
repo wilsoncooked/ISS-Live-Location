@@ -1,7 +1,6 @@
 import React from 'react';
 import NightMap from './NightMap.js';
 import SpecsPanel from './SpecsPanel';
-import UserLocation from './UserLocation';
 import PeopleInSpace from './PeopleInSpace';
 
 class IssApi extends React.Component {
@@ -9,8 +8,6 @@ class IssApi extends React.Component {
     super(props);
     this.state = {
       iss_position: {},
-      // Using fake data.
-      user_position: { latitude: '52.5', longitude: '13.4' },
       isLoaded: false
     };
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -44,12 +41,11 @@ class IssApi extends React.Component {
       <div>
         <NightMap
           sateliteLocation={this.state.iss_position}
-          userLocation={this.state.user_position} />
+          userLocation={this.props.userLocation} />
         <SpecsPanel
           sateliteLocation={this.state.iss_position}
           PeopleInSpace={this.state.numberOfPeople}
         />
-        <UserLocation Geolocation={this.props.isGeolocationEnabled} />
       </div>
     )
   }
