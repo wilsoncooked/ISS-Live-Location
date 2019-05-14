@@ -1,13 +1,17 @@
 import React from 'react';
 import NightMap from './NightMap.js';
 import SpecsPanel from './SpecsPanel';
-import PeopleInSpace from './PeopleInSpace';
+import PeopleAPI from './PeopleAPI.js';
 
 class IssApi extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       iss_position: {},
+      // Using fake data.
+      user_position: { latitude: '52.5', longitude: '13.4' },
+      numberOfPeople: '',
+      people: null,
       isLoaded: false
     };
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -15,9 +19,10 @@ class IssApi extends React.Component {
 
   handleUpdate(props) {
     this.fetchSpaceStation()
-    console.log(this.props)
-    console.log(`handleUpdate ${this.fetchSpaceStation()}`)
   }
+  // componentDidUpdate() {
+  //   this.fetchSpaceStation()
+  // }
 
   componentDidMount() {
     this.fetchSpaceStation();
@@ -33,19 +38,32 @@ class IssApi extends React.Component {
           isLoaded: true
         }))
       .catch(() => console.log('error'))
-  }
+      .then(fetch('http://api.open-notify.org/astros.json')
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          numberOfPeople: data.number,
+          people: data.people,
+          isLoaded: true
+        }))
+      .catch(() => console.log('error')))
+      console.log(this.state.people)
+}
+
 
   render() {
-    const { numberOfPeople } = this.props;
     return (
       <div>
-        <NightMap
-          sateliteLocation={this.state.iss_position}
-          userLocation={this.props.userLocation} />
-        <SpecsPanel
-          sateliteLocation={this.state.iss_position}
-          PeopleInSpace={this.state.numberOfPeople}
-        />
+        <NightMap 
+              sateliteLocation={this.state.iss_position}
+              userLocation={this.state.user_position}/>
+        <SpecsPanel 
+              sateliteLocation={this.state.iss_position} 
+              numberOfPeople={this.state.numberOfPeople}
+          />
+        <PeopleAPI 
+              people={this.state.people}
+          />
       </div>
     )
   }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-// import PeopleInSpace from './PeopleInSpace.js'
+// import PeopleAPI from './PeopleAPI';
 
 const styles = theme => ({
   root: {
@@ -53,7 +53,8 @@ const styles = theme => ({
   },
   spanData: {
     fontSize: '1.3em',
-    textShadow: '1px 1px 10px rgba(176, 196, 222, 0.5)'
+    textShadow: '1px 1px 10px rgba(176, 196, 222, 0.5)',
+    margin: '0',
   },
   title: {
     margin: '0px',
@@ -138,12 +139,13 @@ class SpecsPanel extends React.Component {
               <span className={classes.spanData}>15.54</span>
             </div>
             <div className={classes.specsItem}>
-              <p  className={classes.title}>Local Time:</p>
+            <p  className={classes.title}>Local Time:</p>
               <span className={classes.spanData}>{this.state.hour}:{this.state.minute}:{this.state.second}</span>
             </div>
             <div className={classes.specsItem}>
-              <p  className={classes.title}>People in Space:</p>
-              <span className={classes.spanData}></span>
+              <p  className={classes.title}>People In Space</p>
+              <span className={classes.spanData}>{this.props.numberOfPeople}</span>
+              {/* <PeopleAPI /> */}
             </div>
             <div className={classes.specsItem}>
               <p  className={classes.title}>Years in Orbit:</p>
