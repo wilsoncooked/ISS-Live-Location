@@ -35,9 +35,9 @@ class NightMap extends React.Component {
       };
 
       var geojsonMarkerOptions = {
-        radius: 8,
-        fillColor: "#ff7800",
-        color: "#000",
+        radius: 12,
+        fillColor: "#f00",
+        color: "#f00",
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
@@ -73,7 +73,6 @@ class NightMap extends React.Component {
 
   renderSatelite() {
     const { sateliteLocation } = this.props;
-    // console.log('the sateilte location', sateliteLocation);
 
     if (typeof sateliteLocation.latitude !== "undefined") {
       var geojsonFeature = {
@@ -89,9 +88,9 @@ class NightMap extends React.Component {
       };
 
       var geojsonMarkerOptions = {
-        radius: 8,
-        fillColor: "#ff7800",
-        color: "#b45200",
+        radius: 12,
+        fillColor: "#f0c740",
+        color: "#f0c740",
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
