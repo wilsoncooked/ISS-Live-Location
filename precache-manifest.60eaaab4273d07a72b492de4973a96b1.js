@@ -20,23 +20,23 @@ self.__precacheManifest = [
     "url": "/ISS-Live-Location/./static/js/runtime~main.c1ba383e.js"
   },
   {
-    "revision": "8ccff78ec20b6cb17881",
-    "url": "/ISS-Live-Location/./static/js/main.cbda45ef.chunk.js"
+    "revision": "8b94bd9742d161823e48",
+    "url": "/ISS-Live-Location/./static/js/main.d8172586.chunk.js"
   },
   {
-    "revision": "9ad83d94f2d3d18d3bff",
-    "url": "/ISS-Live-Location/./static/js/2.6d39aae6.chunk.js"
+    "revision": "08357bfb74551f8feb23",
+    "url": "/ISS-Live-Location/./static/js/2.db1cb78b.chunk.js"
   },
   {
-    "revision": "8ccff78ec20b6cb17881",
-    "url": "/ISS-Live-Location/./static/css/main.a5d5d90b.chunk.css"
+    "revision": "8b94bd9742d161823e48",
+    "url": "/ISS-Live-Location/./static/css/main.504dbf44.chunk.css"
   },
   {
-    "revision": "9ad83d94f2d3d18d3bff",
-    "url": "/ISS-Live-Location/./static/css/2.579b8af9.chunk.css"
+    "revision": "08357bfb74551f8feb23",
+    "url": "/ISS-Live-Location/./static/css/2.8ed4aefa.chunk.css"
   },
   {
-    "revision": "ec0aa1f2961ad07600652fb89952dfff",
+    "revision": "ac4c70d501ddba1e7e431f5cc33dfe5e",
     "url": "/ISS-Live-Location/./index.html"
   }
 ];

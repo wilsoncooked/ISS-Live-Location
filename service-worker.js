@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ISS-Live-Location/./precache-manifest.c1acbf5d37cb6951c3055f2dbea378c1.js"
+  "/ISS-Live-Location/./precache-manifest.60eaaab4273d07a72b492de4973a96b1.js"
 );
 
 workbox.clientsClaim();
