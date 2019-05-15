@@ -16,14 +16,14 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <LandingPage />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/prediction" component={Prediction} />
-              <Route path="/about" component={About} />
-              <Route path="/contact" component={ContactPage} />
-            </Switch>
-            <NavigationBar />
-            <IssApi />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/prediction" component={Prediction} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={ContactPage} />
+          </Switch>
+          <NavigationBar />
+          <IssApi userLocation={this.props.coords} />
         </div>
       </BrowserRouter>
     );

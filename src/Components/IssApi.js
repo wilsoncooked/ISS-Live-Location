@@ -8,8 +8,6 @@ class IssApi extends React.Component {
     super(props);
     this.state = {
       iss_position: {},
-      // Using fake data.
-      user_position: { latitude: '52.5', longitude: '13.4' },
       numberOfPeople: '',
       people: null,
       isLoaded: false
@@ -20,9 +18,6 @@ class IssApi extends React.Component {
   handleUpdate(props) {
     this.fetchSpaceStation()
   }
-  // componentDidUpdate() {
-  //   this.fetchSpaceStation()
-  // }
 
   componentDidMount() {
     this.fetchSpaceStation();
@@ -56,7 +51,7 @@ class IssApi extends React.Component {
       <div>
         <NightMap 
               sateliteLocation={this.state.iss_position}
-              userLocation={this.state.user_position}/>
+              userLocation={this.props.userLocation}/>
         <SpecsPanel 
               sateliteLocation={this.state.iss_position} 
               numberOfPeople={this.state.numberOfPeople}
