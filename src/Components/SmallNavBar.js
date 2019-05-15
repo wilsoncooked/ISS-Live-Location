@@ -17,8 +17,6 @@ class NavDrawer extends React.Component {
   
 
   render() {
-    const { classes } = this.props;
-
     const sideList = (
       <div>
         <List className="smallNavList">
