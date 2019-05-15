@@ -4,8 +4,8 @@ import 'leaflet/dist/leaflet.css';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    width: ${props => props.width};
-    height: ${props => props.height};
+    width: 100vw;
+    height: 100vh;
     background-color: #0f2052;
 `;
 
@@ -15,9 +15,9 @@ class NightMap extends React.Component {
       center: [26, 26],
       zoom: 2.2,
       zoomControl: false,
-    });
+     });
 
-    L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
+     L.tileLayer('https://map1.vis.earthdata.nasa.gov/wmts-webmerc/VIIRS_CityLights_2012/default/{time}/{tilematrixset}{maxZoom}/{z}/{y}/{x}.{format}', {
       attribution: false,
       minZoom: 1,
       maxZoom: 8,
@@ -28,11 +28,11 @@ class NightMap extends React.Component {
       keyboard: true,
       scrollWheelZoom: true
     }).addTo(this.map);
-  }
+  }	 
 
   renderLocation() {
     const { userLocation } = this.props;
-
+    console.log(userLocation)
     if (!userLocation) {
       return;
     }
@@ -103,7 +103,7 @@ class NightMap extends React.Component {
     this.renderSatelite();
     this.renderLocation();
     return (
-      <Wrapper width='100vw' height='100vh' id='map' />
+      <Wrapper id='map' />
     )
   }
 }

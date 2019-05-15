@@ -23,7 +23,7 @@ class App extends Component {
               <Route path="/contact" component={ContactPage} />
             </Switch>
             <NavigationBar />
-            <IssApi />
+            <IssApi userLocation={this.props.coords} />
         </div>
       </BrowserRouter>
     );
