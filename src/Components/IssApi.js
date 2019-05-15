@@ -25,14 +25,17 @@ class IssApi extends React.Component {
   }
 
   fetchSpaceStation = () => {
-    fetch('http://api.open-notify.org/iss-now.json')
+    fetch('https://api.wheretheiss.at/v1/satellites/25544')
       .then(response => response.json())
       .then(data =>
         this.setState({
-          iss_position: data.iss_position,
+          iss_position: {
+            latitude: data.latitude,
+            longitude: data.longitude
+          },
           isLoaded: true
         }))
-      .catch(() => console.log('error'))
+      .catch(() => console.log('Error fetching satellite data.'))
       .then(fetch('http://api.open-notify.org/astros.json')
       .then(response => response.json())
       .then(data =>
@@ -41,8 +44,7 @@ class IssApi extends React.Component {
           people: data.people,
           isLoaded: true
         }))
-      .catch(() => console.log('error')))
-      console.log(this.state.people)
+      .catch(() => console.log('Error fetching astros data.')))
 }
 
 
