@@ -20,15 +20,15 @@ self.__precacheManifest = [
     "url": "/ISS-Live-Location/./static/js/runtime~main.c1ba383e.js"
   },
   {
-    "revision": "8b94bd9742d161823e48",
-    "url": "/ISS-Live-Location/./static/js/main.d8172586.chunk.js"
+    "revision": "cd3e4e3e472cef7ed276",
+    "url": "/ISS-Live-Location/./static/js/main.f15d4af1.chunk.js"
   },
   {
     "revision": "08357bfb74551f8feb23",
     "url": "/ISS-Live-Location/./static/js/2.db1cb78b.chunk.js"
   },
   {
-    "revision": "8b94bd9742d161823e48",
+    "revision": "cd3e4e3e472cef7ed276",
     "url": "/ISS-Live-Location/./static/css/main.504dbf44.chunk.css"
   },
   {
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/ISS-Live-Location/./static/css/2.8ed4aefa.chunk.css"
   },
   {
-    "revision": "ac4c70d501ddba1e7e431f5cc33dfe5e",
+    "revision": "e62afafb065956a21f84cb4522e61cfd",
     "url": "/ISS-Live-Location/./index.html"
   }
 ];
